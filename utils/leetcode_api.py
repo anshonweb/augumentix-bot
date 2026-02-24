@@ -105,7 +105,7 @@ class LeetCodeAPI:
             if stat["difficulty"] == "All":
                 return stat["count"]
         return 0
-
+        
     async def update_user(self, bot, discord_id: int, leetcode_username: str):
         try:
             user_stats = await self.get_user_stats(leetcode_username)

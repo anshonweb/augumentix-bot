@@ -28,5 +28,18 @@ class AINewsListener(commands.Cog):
         except Exception as e:
             logger.error(f"Error in AI news listener: {e}")
 
+    @commands.Cog.listener()
+    async def on_reaction_add(self, reaction: discord.Reaction, user: discord.User):
+        if user.bot:
+            return
+
+        try:
+            from utils.ai_news_picker import AINewsPicker
+            picker = AINewsPicker(self.bot.db)
+            await picker.check_for_reaction_response(reaction, user)
+
+        except Exception as e:
+            logger.error(f"Error in AI news reaction listener: {e}")
+
 async def setup(bot):
     await bot.add_cog(AINewsListener(bot))

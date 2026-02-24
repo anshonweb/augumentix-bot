@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "Two Sum",
+    "difficulty": "Easy",
+    "category": "Array / Hashing",
+    "leetcode_url": "https://leetcode.com/problems/two-sum/",
+    "description": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.",
+    "hints": [
+      "Think about using a hash map to store numbers you've seen",
+      "For each number, check if target - number exists in your hash map"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Valid Anagram",
+    "difficulty": "Easy",
+    "category": "Array / Hashing",
+    "leetcode_url": "https://leetcode.com/problems/valid-anagram/",
+    "description": "Given two strings s and t, return true if t is an anagram of s, and false otherwise.",
+    "hints": [
+      "Count the frequency of each character",
+      "Compare the character counts of both strings"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Contains Duplicate",
+    "difficulty": "Easy",
+    "category": "Array / Hashing",
+    "leetcode_url": "https://leetcode.com/problems/contains-duplicate/",
+    "description": "Given an integer array nums, return true if any value appears at least twice in the array.",
+    "hints": [
+      "Use a set to track numbers you've seen",
+      "If you see a number again, return true"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Group Anagrams",
+    "difficulty": "Medium",
+    "category": "Array / Hashing",
+    "leetcode_url": "https://leetcode.com/problems/group-anagrams/",
+    "description": "Given an array of strings strs, group the anagrams together.",
+    "hints": [
+      "Anagrams have the same character counts",
+      "Use sorted string or character count as a key"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Top K Frequent Elements",
+    "difficulty": "Medium",
+    "category": "Array / Hashing",
+    "leetcode_url": "https://leetcode.com/problems/top-k-frequent-elements/",
+    "description": "Given an integer array nums and an integer k, return the k most frequent elements.",
+    "hints": [
+      "Count frequencies using a hash map",
+      "Use bucket sort or a heap to find top k"
+    ]
+  }
+]

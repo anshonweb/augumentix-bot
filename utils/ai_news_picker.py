@@ -89,3 +89,35 @@ class AINewsPicker:
         except Exception as e:
             logger.error(f"Error checking response: {e}")
             return False
+
+    async def check_for_reaction_response(self, reaction: discord.Reaction, user: discord.User):
+        try:
+            assignee = await self.db.get_current_ai_news_assignee()
+
+            if not assignee or assignee['completed']:
+                return False
+
+            if str(reaction.emoji) != "👍":
+                return False
+
+            if user.id == assignee['discord_id']:
+                await self.mark_complete(user.id)
+
+                embed = discord.Embed(
+                    title="✅ AI News Received!",
+                    description=f"Thanks <@{user.id}>! Your AI news has been recorded.",
+                    color=discord.Color.green()
+                )
+
+                embed.set_footer(
+                    text="This will be shared on social media Thursday"
+                )
+
+                await reaction.message.channel.send(embed=embed)
+                return True
+
+            return False
+
+        except Exception as e:
+            logger.error(f"Error checking reaction response: {e}")
+            return False
